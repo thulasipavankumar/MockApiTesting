@@ -8,21 +8,24 @@ app.get('/user', (req, res) => {
     console.log("request parameter is"+userQuery);
     console.log(dataToStore[userQuery]);
     if(dataToStore[userQuery]===undefined){
-        res.send('No such user exists in data')
+      res.status(404).json({
+        message:"No such user exists in data"
+      });
+     
     }else{
-        res.json(dataToStore[userQuery]);
+        res.status(200).json(dataToStore[userQuery]);
     }
   
 })
 app.get('/', function(req, res) {
-    res.render('index.html');
+    res.sendFile('./index.html');
 });
 
 app.put('/', (req, res) => {
     const input = req.body;
     console.log(req.body)
     dataToStore[input.id]= input;
-    res.send('user data stored'+dataToStore[input.id]);
+    res.status(201).json(input);
   })
 
 
