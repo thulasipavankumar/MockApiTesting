@@ -1,0 +1,22 @@
+{
+  "name": "apitesting",
+  "version": "1.0.0",
+  "description": "this is sample api testing with nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
+  },
+  "keywords": [
+    "api",
+    "express"
+  ],
+  "author": "pavan kumar tulasi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "10.x"
+  }
+}
